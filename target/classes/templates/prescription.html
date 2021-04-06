@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        ul.symptom {
+            text-align: left;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        ul.menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li.menu {
+            float: left;
+            border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li.menu a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li.menu a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        input[type=text],input[type=password], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .log:hover{
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .first{
+            /*text-align: center;*/
+            margin: 0;
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            /*margin-right: -50%;*/
+            /*transform: translate(-50%, -50%) ;*/
+        }
+
+        .container{
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .left{
+            text-align: left;
+            float: left;
+            max-width: 100px;
+            padding: 20px;
+            padding-top: 50px;
+            overflow: hidden;
+            margin-right: 100px;
+        }
+
+        .right{
+            text-align: left;
+            margin-left: 110px;
+            border-left: double 2px black;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .patient{
+            text-align: left;
+            float: left;
+            max-width: 100px;
+            margin-right: 110px;
+            padding-left: 5px;
+            overflow: hidden;
+        }
+        .doctor{
+            text-align: left;
+            float: right;
+            margin-left: 250px;
+            padding-right: 5px;
+            max-width: 250px;
+            overflow: hidden;
+        }
+        .presciptionPart{
+            clear: both;
+            width: 100%;
+            border-top: double 1px black;
+        }
+
+        #signature{
+            padding-top: 100px;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="patient">
+        Serial No: <label th:text="${patient.id}"></label><br/>
+        Name: <label th:text="${patient.patientName}"></label><br/>
+        Contact: <label th:text="${patient.phoneNumber}"></label><br/>
+        Gender: <label th:text="${patient.gender}"></label>
+    </div>
+    <div class="doctor">
+        <p>
+         <b><label th:text="${doctorName}"></label></b><br/>
+         <label th:text="${designation}"></label><br/>
+         <label th:text="${address}"></label><br/>
+         <label th:text="${phoneNumber}"></label></p>
+    </div>
+
+    <div class="presciptionPart">
+        <div class="left">
+            Age : <label th:text="${patient.age}"></label>
+            <br/><br/>
+            Height : <label th:text="${height}"></label>
+            <br/><br/>
+            Weight : <label th:text="${weight}"></label>
+            <br/><br/>
+            Blood Pressure : <label th:text="${bloodPressure}"></label>
+        </div>
+        <div class="right">
+            <p align="left"><img src="https://www.myahsrx.com/portals/94/Images/receipt_receipts_text_shred-512.png" style="width:50px;height:40px;border:0;"/></p>
+            <p><b>Medicines :</b></p>
+            <ol class="symptom">
+                <li th:each="i : ${medicineAndDose}">
+                    "<label th:text="${i.medicineName}"></label>" for : <label th:text="${i.dose}"></label>
+                </li>
+            </ol>
+            <br/>
+            <p><b>Test :</b></p>
+            <ol class="symptom">
+                <li th:each="i : ${tests}">
+                    "<label th:text="${i}"></label>"
+                </li>
+            </ol>
+            <br/>
+            <p><b>Advice :</b></p>
+            <ol class="symptom">
+                <li th:each="i : ${advices}">
+                    "<label th:text="${i}"></label>"
+                </li>
+            </ol>
+
+        </div>
+        <p id="signature"><b><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></b>
+        <br/>
+            <img src="https://ravenambition.files.wordpress.com/2013/09/rick_riordan_signature.png" style="width:200px;height:100px;"/>
+        </p>
+    </div>
+</div>
+
+<!--<p align="center"><input class="log" type="button" value="Print" id="printButton" onclick="printFunc()"/></p>-->
+<br/><br/><br/>
+<p align="center">
+    <img onclick="printFunc()" src="https://cdn1.iconfinder.com/data/icons/complete-medical-healthcare-icons-for-apps-and-web/128/medication-bottle-2-512.png" style="width:25px;height:20px;border:0;" />
+</p>
+    <!--<input class="log" type="button" value="Email"/></p>-->
+
+<script>
+    function printFunc(){
+        window.print();
+    }
+</script>
+
+</body>
+</html>

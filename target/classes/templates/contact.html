@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+            border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="home">Home</a></li>
+    <li><a href="profile">Profile</a></li>
+    <li><a class="active" href="contact">Contact</a></li>
+    <li style="float:right"><a href="about">About</a></li>
+    <li style="float:right"><a href="/logout">Logout</a></li>
+</ul>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Mail</th>
+    </tr>
+    <tr>
+        <td>LabAid Diagnostics</td>
+        <td>01800000000</td>
+        <td>l@gmail.com</td>
+    </tr>
+    <tr>
+        <td>Delta Pharmacy</td>
+        <td>01800000000</td>
+        <td>d@gmai.com</td>
+    </tr>
+    <tr>
+        <td>Popular Diagnostic</td>
+        <td>01800000000</td>
+        <td>p@gmail.com</td>
+    </tr>
+    <tr>
+        <td>Apollo Hospital</td>
+        <td>01800000000</td>
+        <td>a@gmail.com</td>
+    </tr>
+    <tr>
+        <td>Ibn Sina Diagnostics</td>
+        <td>01800000000</td>
+        <td>i@gmail.com</td>
+    </tr>
+    <tr>
+        <td>Jononi Pharmacy</td>
+        <td>01800000000</td>
+        <td>j@gmail.com</td>
+    </tr>
+</table>
+
+</body>
+</html>

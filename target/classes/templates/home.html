@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+
+        body{
+            background-image:url("https://img2.goodfon.com/wallpaper/big/3/7f/stethoscope-medicine.jpg");
+            background-attachment:fixed;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+            border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+    <style>
+        .body{
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .dropbtn {
+            background-color: #5d5a56;
+            color: white;
+            padding: 16px 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            height: 50px;
+            width: 150px;
+            text-decoration: none;
+        }
+
+        #prescription {
+            background-color: #5d5a56;
+            color: white;
+            padding: 16px 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            height: 50px;
+            width: 150px;
+            text-decoration: none;
+        }
+
+        #prescription:hover {
+            background-color: #3e8e41;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+
+    <style>
+        div.container {
+            width: 100%;
+            height: 100%;
+        }
+        nav {
+            float: left;
+            max-width: 200px;
+            margin: 0;
+            padding: 1em;
+        }
+        div.middle {
+            margin-left: 210px;
+            border-left: 2px solid black;
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body class="body">
+    <ul>
+        <li><a class="active" href="home">Home</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li style="float:right"><a href="about">About</a></li>
+        <li style="float:right"><a href="/logout">Logout</a></li>
+    </ul>
+    <br/><br/>
+
+    <a id="prescription" href="patient">Prescription</a><br/>
+
+
+    <br/><br/>
+
+    <div class="dropdown">
+        <button class="dropbtn">Edit Medicine</button>
+        <div class="dropdown-content">
+            <a href="addMedicine">Add Medicine</a>
+            <a href="deleteMedicine">Delete Medicine</a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <div class="dropdown">
+        <button class="dropbtn">Edit Test</button>
+        <div class="dropdown-content">
+            <a href="addTest">Add Test</a>
+            <a href="deleteTest">Delete Test</a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <div class="dropdown">
+        <button class="dropbtn">Edit Advice</button>
+        <div class="dropdown-content">
+            <a href="addAdvice">Add Advice</a>
+            <a href="deleteAdvice">Delete Advice</a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+
+<!--<div class="container">-->
+
+    <!--<div class="header">-->
+        <!--<ul>-->
+        <!--<li><a class="active" href="home">Home</a></li>-->
+        <!--<li><a href="profile">Profile</a></li>-->
+        <!--<li><a href="contact">Contact</a></li>-->
+        <!--<li style="float:right"><a href="about">About</a></li>-->
+        <!--<li style="float:right"><a href="/logout">Logout</a></li>-->
+        <!--</ul>-->
+        <!--<br/>-->
+    <!--</div>-->
+
+    <!--<nav>-->
+        <!--<div class="dropdown">-->
+        <!--<button class="dropbtn">Edit Medicine</button>-->
+        <!--<div class="dropdown-content">-->
+        <!--<a href="addMedicine">Add Medicine</a>-->
+        <!--<a href="deleteMedicine">Delete Medicine</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<br/><br/>-->
+
+        <!--<div class="dropdown">-->
+        <!--<button class="dropbtn">Edit Test</button>-->
+        <!--<div class="dropdown-content">-->
+        <!--<a href="addTest">Add Test</a>-->
+        <!--<a href="deleteTest">Delete Test</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<br/><br/>-->
+
+        <!--<div class="dropdown">-->
+        <!--<button class="dropbtn">Edit Advice</button>-->
+        <!--<div class="dropdown-content">-->
+        <!--<a href="addAdvice">Add Advice</a>-->
+        <!--<a href="deleteAdvice">Delete Advice</a>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--<br/><br/>-->
+    <!--</nav>-->
+
+    <!--<div class="middle">-->
+        <!--<p>Hello</p>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+</body>
+</html>

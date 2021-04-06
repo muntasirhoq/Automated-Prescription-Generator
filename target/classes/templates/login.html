@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login</title>
+
+    <style>
+
+        body{
+            background-image:url("http://wrm5sysfkg-flywheel.netdna-ssl.com/wp-content/uploads/2012/04/stethoscope_63197716.jpg");
+            background-attachment:fixed;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        input[type=text],input[type=password], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid #898989;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .log:hover{
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+        .first{
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) ;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <form method="post" action="/login">
+            <p class="texts">Username: <input type="text" name="username"/></p>
+            <p class="texts">Password: <input type="password" name="password"/></p>
+            <p><input class="log" type="submit" value="Login"/></p>
+        </form>
+    </div>
+</body>
+</html>

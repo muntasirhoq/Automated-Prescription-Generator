@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+            border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        div.first{
+            text-align: center;
+            color: #111111;
+        }
+        .header{
+            color: #111111;
+            border: 3px black dashed ;
+            background-color: #bbbbbb;
+        }
+        footer{
+            background-color: #333;
+            color: #fffeff;
+            padding: 1em;
+            color: white;
+            clear: left;
+            text-align: center;
+            width: 100%;
+            margin-top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="profile">Profile</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li style="float:right"><a class="active" href="about">About</a></li>
+        <li style="float:right"><a href="/logout">Logout</a></li>
+    </ul>
+    <br/>
+
+    <div class="first">
+        <h3 class="header">1305027</h3>
+        <h3 class="header">1305047</h3>
+        <footer>Copyright &copy; CSE 324</footer>
+    </div>
+
+</body>
+</html>
